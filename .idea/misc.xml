@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="Remote 3.13 (sftp://arduino@test1.lan:22/home/arduino/.virtualenvs/kilnview/bin/python)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote 3.13 (sftp://arduino@test1.lan:22/home/arduino/.virtualenvs/test-ide/bin/python3.13)" project-jdk-type="Python SDK" />
+</project>
