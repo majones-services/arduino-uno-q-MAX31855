@@ -47,6 +47,11 @@ double get_temp3() {
   return thermo3.readCelsius();
 }
 
+// A simple function to test round-trip latency. It does nothing.
+void ping() {
+  // This function is intentionally empty.
+}
+
 void setup() {
     Serial.begin(115200);
 
@@ -92,6 +97,9 @@ void setup() {
     }
     if (!Bridge.provide("get_temp3", get_temp3)) {
         Monitor.print("Error providing method: get_temp3\n"); delay(10);
+    }
+    if (!Bridge.provide("ping", ping)) {
+        Monitor.print("Error providing method: ping\n"); delay(10);
     }
 
     Monitor.print("Setup DONE.\n"); delay(10);

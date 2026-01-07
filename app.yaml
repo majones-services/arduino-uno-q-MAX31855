@@ -2,10 +2,10 @@
 # This file describes the application's metadata and properties.
 
 # The user-visible name of the application.
-name: kilnview
+name: uno-q-max31855
 
 # A brief description of what the application does.
-description: ""
+description: "A Example application using Max31855 Thermocouple"
 
 # The icon for the application, can be an emoji or a short string.
 icon: 😀
