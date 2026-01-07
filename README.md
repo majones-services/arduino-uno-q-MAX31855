@@ -37,10 +37,19 @@ This function measures the latency of calling `get_temp1` on the Arduino. This t
 
 Prerequistes:
 
-1. You have installed Arduino-App-Lab
+1. You have installed Arduino-App-Lab AND Arduino-IDE (version 2.3.7)
+2. The Uno Q is set up and connected to the same network as your laptop / workstation 
+3. You can SSH into your Uno Q board, you have a USB connection to the board as well.
+4. You have setup your github ssh access on your Uno-q (Process Documentation: https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
-1.  **Hardware Setup**: Connect three MAX31855 thermocouple amplifiers to your Arduino board.
-2.  **Upload Sketch**: Upload the `sketch/sketch.ino` file to your Arduino.
-3.  **Run Python Script**: Execute the `python/main.py` script on your host machine.
+### Step 1
+
+Open a Terminal and SSH into your board. Something like this:
+````
+ssh arduino@<your board's name>
+````
+Once logged into the board, arduino-app-lab user defined application file systems are located in: /home/arduino/ArduinoApps
+
+using git, you can clone the repo to your local uno-q board.
 
 The Python script will first run the latency tests and print the results to the console. It will then enter a loop, requesting and printing the temperature from each of the three thermocouples every 5 seconds.
