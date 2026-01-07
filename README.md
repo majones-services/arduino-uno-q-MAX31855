@@ -46,10 +46,36 @@ Prerequistes:
 
 Open a Terminal and SSH into your board. Something like this:
 ````
-ssh arduino@<your board's name>
+ssh arduino@test1
 ````
-Once logged into the board, arduino-app-lab user defined application file systems are located in: /home/arduino/ArduinoApps
+Replace test1 with the name or IP address of your Uno-q board. Once logged into the board, arduino-app-lab user defined application file systems are located in: /home/arduino/ArduinoApps
 
 using git, you can clone the repo to your local uno-q board.
+````
+git clone git@github.com:majones-services/arduino-uno-q-MAX31855.git
+````
+### Step 2
+Since we're going to be using a MAX31855, we need to add some C libs that are needed to easily access the device. I chose Adafruit Max31855 Library. Sadly, there isn't a 
+simple way (*** That I know of! **) with Arduino-app-lab to add these kinds if libraries. We would use git and clone the needed library, however, an alternate is to use Arduino IDE and install.
 
-The Python script will first run the latency tests and print the results to the console. It will then enter a loop, requesting and printing the temperature from each of the three thermocouples every 5 seconds.
+Open Arduino IDE and connect to your board (thru USB):
+
+1. Using the library tab, seach for MAX31855.Select and install the Adafruit MAX31855 Library and Adafruit BusIO.
+
+![img.png](images/ide-add-library.png)
+
+The IDE will install / copy the lib to your Uno-q boards filesystem: /home/arduino/libraries
+
+2. The github code base has the libraries already added to the sketch.yaml file. If for some reason, you have decided to keep LIB somewhere else you will need to update the sketch.yaml file
+
+The resulting file should look like this:
+![img.png](images/sketch-yaml.png)
+
+### Step 3
+
+You're ready to RUN the application in arduino-app-lab by selecting the "RUN" button. The output
+The output of the python script will look something like this:
+
+![img_1.png](images/python-latency.png)
+
+
